@@ -39,6 +39,8 @@ body {
   flex: 1;
   padding: 24px;
   overflow-y: auto;
+  background-color: #213448;
+  color: #fff;
 }
 
 /* Tablet */
