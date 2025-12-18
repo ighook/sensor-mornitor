@@ -1,0 +1,56 @@
+:root {
+  --padding-desktop: 2rem;
+  --padding-tablet: 1rem;
+  --padding-mobile: 0.75rem;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  #root {
+    /* padding: var(--padding-tablet); */
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #root {
+    /* padding: var(--padding-mobile); */
+  }
+}
