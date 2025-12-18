@@ -4,7 +4,7 @@ import styles from "./Sidebar.module.css";
 export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <span className={styles.header}>Sensor Monitor</span>
+      <span className={styles.header}>Sensor Monitoring</span>
       <nav>
         <ul>
           <li>
