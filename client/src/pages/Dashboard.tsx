@@ -1,8 +1,21 @@
 import { useEffect, useState } from "react";
 
-export default function Dashboard() {
-  const [sensors, setSensors] = useState([]);
+interface Sensor {
+  sensor_id: number;
+  sensor_code: string;
+  group_id: number;
+  type: string;
+  name: string;
+  unit: string;
+  status: string;
+  created_at: string;
+  updated_at: string;
+}
 
+export default function Dashboard() {
+  const [sensors, setSensors] = useState<Sensor[]>([]);
+
+  
   useEffect(() => {
     console.log("loaded");
     getSensors();
