@@ -4,6 +4,7 @@ export default function Dashboard() {
   const [sensors, setSensors] = useState([]);
 
   useEffect(() => {
+    console.log("loaded");
     getSensors();
   }, []);
 
@@ -21,7 +22,7 @@ export default function Dashboard() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log("🚀 ~ getSensors ~ data:", data)
         setSensors(data);
       });
   }

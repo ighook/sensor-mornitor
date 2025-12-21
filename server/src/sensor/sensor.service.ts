@@ -1,11 +1,9 @@
 import { Injectable, Inject } from "@nestjs/common";
+import { PrismaService } from '../../prisma/prisma.service';
 
 @Injectable()
 export class SensorService {
-  constructor(
-    // database.provider.ts에서 정의한 이름을 주입받습니다.
-    @Inject('DATABASE_CONNECTION') private connection: any 
-  ) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   async getSensorList() {
     // 1. 직접 SQL 작성
@@ -16,8 +14,7 @@ export class SensorService {
       WHERE is_active = 1`;
     
     // 2. 쿼리 실행 (mysql2/promise는 [결과데이터, 필드정보] 배열을 반환함)
-    const [rows] = await this.connection.query(sql);
-    
+    const rows = await this.prisma.$queryRawUnsafe(sql);
     console.log(rows);
     return rows;
   }

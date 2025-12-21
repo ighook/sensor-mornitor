@@ -14,6 +14,7 @@ function App() {
           <Sidebar />
           <main className="main">
             <Routes>
+              <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/sensors" element={<Sensors />} />
               <Route path="/settings" element={<Settings />} />
