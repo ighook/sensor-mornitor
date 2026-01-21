@@ -26,3 +26,6 @@ npm run dev
 Sensor Monitor is licensed under the MIT license.
 
 Node.js v22.19.0
+
+## Prisma
+npx prisma db pull

@@ -11,4 +11,10 @@ export class SensorController {
         const sensorList = this.sensorService.getSensorList();
         return sensorList;
     }
+
+    @Post('getSensorStatusStats')
+    getSensorStatusStats(@Body() body: any) {
+        const sensorStatusStats = this.sensorService.getSensorStatusStats();
+        return sensorStatusStats;
+    }
 }
