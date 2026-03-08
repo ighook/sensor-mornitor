@@ -12,7 +12,9 @@ export class SensorService {
       FROM sensor s
       JOIN code c ON s.type = c.code_value
       WHERE s.is_active = 1
-      ORDER BY s.sensor_code ASC`;
+      ORDER BY CASE WHEN s.connect_status = 'ST04' THEN 0 WHEN s.connect_status = 'ST03' THEN 1 WHEN s.connect_status = 'ST02' THEN 2 WHEN s.connect_status = 'ST01' THEN 3 END
+      , CASE WHEN s.threshold_status = 'AL03' THEN 0 WHEN s.threshold_status = 'AL02' THEN 1 WHEN s.threshold_status = 'AL01' THEN 2 WHEN s.threshold_status = 'AL00' THEN 3 END
+      , s.sensor_code ASC`;
 
     const rows = await this.prisma.$queryRawUnsafe(sql);
     return rows;

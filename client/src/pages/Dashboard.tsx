@@ -10,7 +10,7 @@ import styles from "./Dashboard.module.css";
   TableRow,
   TableHead,
   TableCell,
-} from "@/components/ui/table";
+} from "@/components/ui/table"; */
 
 import {
   Select,
@@ -19,7 +19,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"; */
+} from "@/components/ui/select";
 
 // OpenLayers
 import Map from "ol/Map";
@@ -208,34 +208,49 @@ export default function Dashboard() {
         </div>
       </div>
 
+      {/* 하단 컨테이너 */}
       <div className={`${styles.bottomContainer}`}>
+        {/* 지도 */}
         <div className={`${styles.mapContainer}`}>
           <Wrapper apiKey={window.__ENV__.GOOGLE_MAPS_API_KEY} version="beta">
             <GoogleOpenLayers />
           </Wrapper>
         </div>
 
-        <div className={`${styles.sensorListContainer}`}>
-          {sensors.map((sensor) => (
-            <div
-              className={`${styles.sensorItem} ${
-                sensor.connect_status == "ST02"
-                  ? `${styles.sensorItemDisabled}`
-                  : ""
-              }`}
-              key={sensor.sensor_id}
-            >
-              <span
-                className={`${styles.sensorId} ${
-                  styles[sensor.threshold_status] || ""
-                }`}
+        {/* 센서 리스트 */}
+        <div className={`${styles.sensorListWrapper}`}>
+          <div className={`${styles.sensorSelectWrapper}`}>
+            <select className={`${styles.sensorSelect}`}>
+              <option value="">센서 선택</option>
+            </select>
+          </div>
+          <div className={`${styles.sensorListContainer}`}>
+            {sensors.map((sensor) => (
+              <div
+                className={`${styles.sensorItem} ${
+                  sensor.connect_status == "ST02"
+                    ? `${styles.sensorItemDisabled}`
+                    : ""
+                } ${styles[sensor.connect_status] || ""}`}
+                key={sensor.sensor_id}
               >
-                {sensor.sensor_code}
-              </span>
-              <span className={`${styles.sensorType}`}>{sensor.type}</span>
-              <span className={`${styles.sensorName}`}>{sensor.name}</span>
-            </div>
-          ))}
+                <span
+                  className={`${styles.sensorId} ${
+                    styles[sensor.threshold_status] || ""
+                  }`}
+                >
+                  {sensor.sensor_code}
+                </span>
+                <span className={`${styles.sensorType}`}>{sensor.type}</span>
+                <span
+                  className={`${styles.sensorName}`}
+                  style={{ fontWeight: "bold" }}
+                >
+                  {sensor.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
         {/* <div className={`${styles.sensorListContainer}`}>
           <Table>

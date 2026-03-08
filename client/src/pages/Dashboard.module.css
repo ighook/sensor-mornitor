@@ -100,8 +100,27 @@
   height: 100%;
 }
 
-.sensorListContainer {
+.sensorListWrapper {
+  display: flex;
+  flex-direction: column;
   width: 60%;
+  height: 100%;
+}
+
+.sensorSelectWrapper {
+  width: 100%;
+  height: auto;
+  padding: 0 10px 10px 10px;
+}
+
+.sensorSelect {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.sensorListContainer {
+  width: 100%;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -148,4 +167,21 @@
 }
 .AL03 {
   color: #f87171;
+}
+
+.ST01 {
+  border: 3px solid #4ade80;
+  background-color: #e3fff3;
+}
+.ST02 {
+  border: 3px solid #94a3b8;
+  background-color: #e3fff3;
+}
+.ST03 {
+  border: 3px solid #fbbf24;
+  background-color: #fff7e3;
+}
+.ST04 {
+  border: 3px solid #f87171;
+  background-color: #fff7e3;
 }
