@@ -12,14 +12,14 @@ import styles from "./Dashboard.module.css";
   TableCell,
 } from "@/components/ui/table"; */
 
-import {
+/* import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/select"; */
 
 // OpenLayers
 import Map from "ol/Map";
