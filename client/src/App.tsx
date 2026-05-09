@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import Header from "./layouts/Header";
 import Sidebar from "./layouts/Sidebar";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,8 +12,9 @@ function App() {
     <>
       <BrowserRouter>
         <div className="layout">
-          <Sidebar />
+          <Header />
           <main className="main">
+            <Sidebar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />

@@ -4,7 +4,6 @@ import styles from "./Sidebar.module.css";
 export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <span className={styles.header}>Sensor Flow</span>
       <nav>
         <ul>
           <li>

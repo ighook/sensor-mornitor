@@ -89,7 +89,7 @@ const GoogleOpenLayers = () => {
       <div
         ref={mapElement}
         className="w-full h-full"
-        style={{ backgroundColor: "#292929" }}
+        // style={{ backgroundColor: "#292929" }}
       />
     </div>
   );
